@@ -6,7 +6,7 @@ from farmware_tools import send_celery_script as send
 import CeleryPy as cp
 from os.path import dirname, join
 from datetime import datetime
-import pause
+
 
 ##List of functions and classes for ease of use
 """
@@ -349,14 +349,11 @@ class Sequence:
 class MyFarmware():
     coords = [0,0,0]
     TOKEN = ''
-    ss.pause()
-    ## Movetest
-    def pause(self):
-        PauseTime = []
-        pause.until(datetime(2019, 6, 27, 15,10))
-        self.goto(i[-500], i[-500], i[-2]+78)
-        pause.until(datetime(2019, 6, 27, 15,15))
-        self.goto(i[0], i[0], i[2]+78)
+    from datetime import datetime
+    pause.until(datetime(2019, 6, 27, 16, 50))
+    self.goto(i[-500], i[-500], i[-2]+78)
+    pause.until(datetime(2019, 6, 27, 16,52))
+    self.goto(i[0], i[0], i[2]+78)
 
 
     ##Movetest
