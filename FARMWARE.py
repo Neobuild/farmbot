@@ -349,16 +349,6 @@ class Sequence:
 class MyFarmware():
     coords = [0,0,0]
     TOKEN = ''
-    from datetime import datetime
-    pause.until(datetime(2019, 6, 27, 16, 50))
-    self.goto(i[-500], i[-500], i[-2]+78)
-    pause.until(datetime(2019, 6, 27, 16,52))
-    self.goto(i[0], i[0], i[2]+78)
-
-
-    ##Movetest
-
-
 
     def __init__(self,farmwarename):
         self.farmwarename = farmwarename
@@ -436,7 +426,14 @@ class MyFarmware():
         info = send(cp.create_node(kind='execute', args=s.sequence))
         self.coords = [x, y, z]
         return info
-
+        ##Movetest
+        from datetime import datetime
+        def pause(self):
+        pause.until(datetime(2019, 6, 27, 17, 25))
+        self.goto(500,500,0)
+        pause.until(datetime(2019, 6, 27, 17,29))
+        self.goto(0, 0, 0)
+        ##Movetest
 
     def calibrate(self):
         i = 0
@@ -483,6 +480,7 @@ class MyFarmware():
         log("Data loaded.", message_type='info')		#Just some fancy information.
 
         self.goto(0,0,0)					#send the bot to 0,0,0. Not necessary, but a nice check to see if the origin is properly set.
+        self.pause()                        # try pause and move
         self.water()						#Water sequence at line 525
         self.plant()                                            #Plant sequence at line 561
 
