@@ -480,7 +480,10 @@ class MyFarmware():
         log("Data loaded.", message_type='info')		#Just some fancy information.
 
         self.goto(0,0,0)					#send the bot to 0,0,0. Not necessary, but a nice check to see if the origin is properly set.
-        self.pause()                        # try pause and move
+        pause.until(datetime(2019, 6, 27, 17, 25))
+        self.goto(500,500,0)
+        pause.until(datetime(2019, 6, 27, 17,29))
+        self.goto(0,0,0)                               # try pause and move
         self.water()						#Water sequence at line 525
         self.plant()                                            #Plant sequence at line 561
 
