@@ -31,6 +31,7 @@ wheels/
 *.spec
 
 # Installer logs
+pip-install pause
 pip-log.txt
 pip-delete-this-directory.txt
 
