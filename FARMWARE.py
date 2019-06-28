@@ -477,9 +477,14 @@ class MyFarmware():
         log("Data loaded.", message_type='info')		#Just some fancy information.
 
         self.goto(0,0,0)
-        while true :					#send the bot to 0,0,0. Not necessary, but a nice check to see if the origin is properly set.
-        time.sleep(90)
-        self.goto(500,500,50)                               # try pause and move
-                                                    #Plant sequence at line 561
+        while true :
+            log("Wait_Time.", message_type='info')					#send the bot to 0,0,0. Not necessary, but a nice check to see if the origin is properly set.
+        import time
+        while True:
+            time.sleep(20) # Delay for 1 minute (60 seconds).
+            print("This prints 20 seconds.")
+            break
+            self.goto(500,500,50)
+
 
         log("Execution successful.", message_type='info')
